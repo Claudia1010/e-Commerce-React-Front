@@ -4,6 +4,7 @@ import HeaderAdmin from './containers/Admin/HeaderAdmin/HeaderAdmin';
 import ShowProducts from './containers/Admin/Product/ShowProducts';
 import CreateProduct from './containers/Admin/Product/CreateProduct';
 import EditProduct from './containers/Admin/Product/EditProduct';
+import ShowOrders from './containers/Admin/Order/ShowOrders';
 
 function PrivateRoute() {
    
@@ -16,6 +17,7 @@ function PrivateRoute() {
                     <Route path="/products" element={<ShowProducts />} />
                     <Route path="/add_product" element={<CreateProduct />} />
                     <Route path="/update_product/:id" element={<EditProduct />} />
+                    <Route path="/get_orders" element={<ShowOrders />} />
                 </Routes>
             </div>
         </>

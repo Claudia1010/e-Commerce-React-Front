@@ -48,7 +48,12 @@ const HeaderAdmin = () => {
                       <NavDropdown.Item href="/products">Show Products</NavDropdown.Item>
                       <NavDropdown.Item href="/add_product">Create Products</NavDropdown.Item>
                     </NavDropdown>
-                    
+                    <NavDropdown
+                      title="Orders"
+                      id={`offcanvasNavbarDropdown-expand-${expand}`}
+                    >
+                      <NavDropdown.Item href="/get_orders">Show Orders</NavDropdown.Item>
+                    </NavDropdown>
                     {getRole() === "admin" ? 
                     <NavDropdown
                     title={`Bienvenido ${getUser().full_name}`}
