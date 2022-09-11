@@ -7,21 +7,22 @@ import Login from './containers/User/Login/Login';
 import Register from './containers/User/Register/Register';
 import ProductList from './containers/Product/ProductList';
 import { Cart } from './components/Cart/Cart';
+import { DataProvider } from './context/DataProvider';
 
 function App() {
   return (
-    <div className="App">
-      <BrowserRouter>
-      <Header/>  
-      <Cart />  
-        <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/paintings" element={<ProductList />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-        </Routes>
-      </BrowserRouter>
-    </div>
+    <DataProvider>
+      <div className="App">
+        <Header/>  
+        <Cart />  
+          <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/paintings" element={<ProductList />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+          </Routes>
+      </div>
+    </DataProvider>
   );
 }
 

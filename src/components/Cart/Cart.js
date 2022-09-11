@@ -1,7 +1,13 @@
-import { DataContext } from "../../context/DataProvider";
 import React, { useContext } from "react";
-import {Button, Image, Modal,Table} from "react-bootstrap";
+import { DataContext } from "../../context/DataProvider";
+import "./Cart.scss";
 
+import {
+  Button,
+  Image,
+  Modal,
+  Table,
+} from "react-bootstrap";
 
 export const Cart = () => {
   const value = useContext(DataContext);
