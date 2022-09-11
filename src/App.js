@@ -6,14 +6,14 @@ import Home from './containers/Home/Home';
 import Login from './containers/User/Login/Login';
 import Register from './containers/User/Register/Register';
 import ProductList from './containers/Product/ProductList';
-
-
+import { Cart } from './components/Cart/Cart';
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
-      <Header/>    
+      <Header/>  
+      <Cart />  
         <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/paintings" element={<ProductList />} />

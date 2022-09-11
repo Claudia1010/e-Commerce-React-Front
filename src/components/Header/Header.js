@@ -1,8 +1,28 @@
-import React from 'react';
-import { Container, Nav, Navbar, NavDropdown, Offcanvas } from 'react-bootstrap';
-import './Header.scss'
+import React, { useContext } from "react";
+import { DataContext } from "../../context/DataProvider";
+import "boxicons";
+import AuthUser from "../AuthUser/AuthUser";
+import "./Header.scss";
+import { Badge, Button, Container, Nav, Navbar, NavDropdown, Offcanvas } from "react-bootstrap";
 
 const Header = () => {
+  const value = useContext(DataContext);
+  const [cart] = value.cart;
+  const [menu, setMenu] = value.menu;
+
+  const { getRole, getUser } = AuthUser();
+
+  const toogleMenu = () => {
+    setMenu(!menu);
+  };
+
+  const { token, logout } = AuthUser();
+  const logoutUser = () => {
+    if (token !== undefined) {
+      logout();
+    }
+  };
+
   return (
     <>
       {['md'].map((expand) => (
@@ -30,25 +50,40 @@ const Header = () => {
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
                   <Nav.Link href="/">Home</Nav.Link>
-                  <Nav.Link href="/paintings">Paintings</Nav.Link>
-                  <NavDropdown
-                    title="Dropdown"
+                  <Nav.Link href="/products">Products</Nav.Link>
+                  {getRole() === "user" ? 
+                    <NavDropdown
+                    title={`Bienvenido ${getUser().full_name}`}
                     id={`offcanvasNavbarDropdown-expand-${expand}`}
                   >
-                    <NavDropdown.Item href="/login">Login</NavDropdown.Item>
-                    <NavDropdown.Item href="/register">
-                      Register
-                    </NavDropdown.Item>
+                    <NavDropdown.Item href="/orders">Ordenes</NavDropdown.Item>
+                    <NavDropdown.Item onClick={logoutUser}>Logout</NavDropdown.Item>
                   </NavDropdown>
+                  :
+                    <NavDropdown
+                      title="Sign in"
+                      id={`offcanvasNavbarDropdown-expand-${expand}`}
+                    >
+                      <NavDropdown.Item href="/login">Login</NavDropdown.Item>
+                      <NavDropdown.Item href="/register">Register</NavDropdown.Item>
+                    </NavDropdown>
+                  }
                 </Nav>
-                <span><box-icon name="cart" style={{fontSize: '30px'}} /></span>
+                {getRole() === "user" &&
+                <Button variant="light" onClick={toogleMenu}>
+                  <box-icon name='cart' color='#000000' ></box-icon>
+                  <Badge pill  bg="danger">
+                    <span className="item__total"> {cart.length} </span>
+                  </Badge>
+                </Button>
+              }
               </Offcanvas.Body>
             </Navbar.Offcanvas>
           </Container>
         </Navbar>
       ))}
     </>
-  )
-}
+  );
+};
 
 export default Header;
