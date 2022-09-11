@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Nav, Navbar, NavDropdown, Offcanvas } from 'react-bootstrap';
+import './Header.scss'
 
 const Header = () => {
   return (
