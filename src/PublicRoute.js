@@ -6,6 +6,8 @@ import Header from './components/Header/Header'
 import Register from './containers/User/Register/Register'
 import Login from './containers/User/Login/Login';
 import Order from './containers/Order/Order';
+import Footer from './components/Footer/Footer';
+
 
 function PublicRoute() {
    
@@ -21,6 +23,7 @@ function PublicRoute() {
                     <Route path="/register" element={<Register />} />
                     <Route path="/orders" element={<Order />} />
                 </Routes>
+                <Footer />
             </div>
         </>
     );

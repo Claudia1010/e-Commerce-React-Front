@@ -2,7 +2,7 @@ import AuthUser from "../components/AuthUser/AuthUser";
 import React, { createContext, useState, useEffect } from "react";
 import axios from 'axios';
 
-const endpoint = 'https://localhost:8000/api'
+const endpoint = 'http://localhost:8000/api'
 
 export const DataContext = createContext();
 
