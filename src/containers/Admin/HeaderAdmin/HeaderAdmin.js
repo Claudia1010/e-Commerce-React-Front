@@ -41,7 +41,14 @@ const HeaderAdmin = () => {
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
                   <Nav.Link href="/">Home</Nav.Link>
-              
+                  <NavDropdown
+                      title="Products"
+                      id={`offcanvasNavbarDropdown-expand-${expand}`}
+                    >
+                      <NavDropdown.Item href="/products">Show Products</NavDropdown.Item>
+                      <NavDropdown.Item href="/add_product">Create Products</NavDropdown.Item>
+                    </NavDropdown>
+                    
                     {getRole() === "admin" ? 
                     <NavDropdown
                     title={`Bienvenido ${getUser().full_name}`}
