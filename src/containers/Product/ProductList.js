@@ -3,7 +3,7 @@ import axios from "axios";
 import {Col, Container, Row } from "react-bootstrap";
 import ProductCard from "../../components/Product/ProductCard";
 
-const endpoint = 'http://localhost:8000/api'
+const endpoint = 'https://git.heroku.com/ch-laravel-react-e-commerce.git/api'
 const ProductList = props => {
   const [ products, setProducts ] = useState( [] )
 

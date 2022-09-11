@@ -59,7 +59,7 @@ export default function AuthUser(){
     }
 
     const http = axios.create({
-        baseURL:"http://localhost:8000/api",
+        baseURL:"https://git.heroku.com/ch-laravel-react-e-commerce.git/api",
         headers:{
             "Content-type" : "application/json",
             "Authorization" : `Bearer ${token}`
