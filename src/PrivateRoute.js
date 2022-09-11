@@ -10,7 +10,7 @@ function PrivateRoute() {
    
     return (
         <>
-            <div className="container">
+            <div className="App">
                 <HeaderAdmin/>
                 <Routes>
                     <Route path="/" element={<Home />} />

@@ -1,4 +1,4 @@
-import axios from 'axios';
+
 import { useEffect, useState } from 'react';
 import AuthUser from '../../components/AuthUser/AuthUser';
 

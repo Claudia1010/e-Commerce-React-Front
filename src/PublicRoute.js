@@ -1,4 +1,4 @@
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Home from './containers/Home/Home';
 import ProductList from './containers/Product/ProductList'
 import { Cart } from './components/Cart/Cart';
@@ -11,7 +11,7 @@ function PublicRoute() {
    
     return (
         <>
-            <div className="container">
+            <div className="App">
                 <Header/>
                 <Cart />
                 <Routes>
@@ -20,7 +20,6 @@ function PublicRoute() {
                     <Route path="/login" element={<Login />} />
                     <Route path="/register" element={<Register />} />
                     <Route path="/orders" element={<Order />} />
-                    {/* <Route path="/addOrder" element={< />} /> */}
                 </Routes>
             </div>
         </>
