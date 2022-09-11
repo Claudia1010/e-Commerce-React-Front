@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import AuthUser from '../../../components/AuthUser/AuthUser';
 import { ButtonGroup } from 'react-bootstrap';
 
-const endpoint = 'http://localhost:8000/api'
+const endpoint = 'https://ch-laravel-react-e-commerce.herokuapp.com/api'
 const ShowProducts = () => {
     const [ products, setProducts ] = useState( [] )
     const {http} = AuthUser();

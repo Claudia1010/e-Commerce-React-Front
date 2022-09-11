@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import AuthUser from "../../../components/AuthUser/AuthUser";
 
-const endpoint = "http://localhost:8000/api";
+const endpoint = "https://ch-laravel-react-e-commerce.herokuapp.com/api";
 
 const CreateProduct = () => {
   const [name, setName] = useState("");

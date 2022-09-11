@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import AuthUser from '../../../components/AuthUser/AuthUser';
 
-const endpoint = 'http://localhost:8000/api'
+const endpoint = 'https://ch-laravel-react-e-commerce.herokuapp.com/api'
 const ShowOrders = () => {
     const [ orders, setOrders ] = useState( [] )
     const {http} = AuthUser();
