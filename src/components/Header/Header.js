@@ -3,7 +3,7 @@ import { DataContext } from "../../context/DataProvider";
 import "boxicons";
 import AuthUser from "../AuthUser/AuthUser";
 import "./Header.scss";
-import { Badge, Button, Container, Nav, Navbar, NavDropdown, Offcanvas } from "react-bootstrap";
+import { Badge, Button, Container, Nav, Navbar, NavDropdown, Offcanvas} from "react-bootstrap";
 
 const Header = () => {
   const value = useContext(DataContext);
