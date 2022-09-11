@@ -1,9 +1,19 @@
-import React from 'react'
+import { Routes, Route } from 'react-router-dom';
+import Home from './containers/Home/Home';
+import HeaderAdmin from './containers/Admin/HeaderAdmin/HeaderAdmin';
 
-const PrivateRoute = () => {
-  return (
-    <div>PrivateRoute</div>
-  )
+function PrivateRoute() {
+   
+    return (
+        <>
+            <div className="container">
+                <HeaderAdmin/>
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                </Routes>
+            </div>
+        </>
+    );
 }
 
-export default PrivateRoute
+export default PrivateRoute;
