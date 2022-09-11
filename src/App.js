@@ -5,6 +5,7 @@ import Header from './components/Header/Header';
 import Home from './containers/Home/Home';
 import Login from './containers/User/Login/Login';
 import Register from './containers/User/Register/Register';
+import ProductList from './containers/Product/ProductList';
 
 
 
@@ -15,7 +16,7 @@ function App() {
       <Header/>    
         <Routes>
             <Route path="/" element={<Home />} />
-            {/* <Route path="/paintings" element={<ProductList />} /> */}
+            <Route path="/paintings" element={<ProductList />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
         </Routes>
