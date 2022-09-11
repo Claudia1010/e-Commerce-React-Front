@@ -7,8 +7,7 @@ export default function AuthUser(){
 
     const getToken = () =>{
         const tokenString = sessionStorage.getItem('token');
-    //    console.log(tokenString)
-       if(typeof tokenString === 'undefined'){
+        if(typeof tokenString === 'undefined'){
           return false
         }
         const userToken = JSON.parse(tokenString);
@@ -26,7 +25,6 @@ export default function AuthUser(){
         const role_user = JSON.parse(roleString);
 
         if(role_user !== null ){
-        //   console.log(role_user[0].name)
           return role_user[0].name;
         }
 
@@ -41,10 +39,6 @@ export default function AuthUser(){
         sessionStorage.setItem('token',JSON.stringify(token));
         sessionStorage.setItem('user',JSON.stringify(user));
         sessionStorage.setItem('role',JSON.stringify(role));
-
-        // console.log("esto es nuestro user", user)
-        // console.log("esto es nuestro token", token)
-        // console.log("esto es nuestro token", role)
 
         setToken(token);
         setUser(user);
@@ -76,3 +70,4 @@ export default function AuthUser(){
         logout
     }
 }
+

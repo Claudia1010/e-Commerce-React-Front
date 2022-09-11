@@ -1,32 +1,23 @@
-import React, { useContext } from "react";
-import { DataContext } from "../../context/DataProvider";
-import "boxicons";
-import AuthUser from "../AuthUser/AuthUser";
-import "./Header.scss";
-import { Badge, Button, Container, Nav, Navbar, NavDropdown, Offcanvas} from "react-bootstrap";
 
-const Header = () => {
-  const value = useContext(DataContext);
-  const [cart] = value.cart;
-  const [menu, setMenu] = value.menu;
+import { Container, Nav, Navbar, NavDropdown, Offcanvas } from 'react-bootstrap';
+import AuthUser from '../../../components/AuthUser/AuthUser';
+import './HeaderAdmin.scss'
 
-  const { getRole, getUser } = AuthUser();
 
-  const toogleMenu = () => {
-    setMenu(!menu);
-  };
-
-  const { token, logout } = AuthUser();
+const HeaderAdmin = () => {
+  const {getRole, getUser, token, logout} = AuthUser();
+  
   const logoutUser = () => {
-    if (token !== undefined) {
-      logout();
-    }
-  };
+      if(token !== undefined){
+          logout();
+      }
+  }
+
 
   return (
     <>
       {['md'].map((expand) => (
-        <Navbar key={expand} bg="light" expand={expand} className="mb-3">
+        <Navbar key={expand} bg="dark" expand={expand} className="navbar-admin mb-3">
           <Container fluid>
           <Navbar.Brand href="/">
             <img
@@ -50,13 +41,24 @@ const Header = () => {
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
                   <Nav.Link href="/">Home</Nav.Link>
-                  <Nav.Link href="/products">Products</Nav.Link>
-                  {getRole() === "user" ? 
+                  <NavDropdown
+                      title="Products"
+                      id={`offcanvasNavbarDropdown-expand-${expand}`}
+                    >
+                      <NavDropdown.Item href="/products">Show Products</NavDropdown.Item>
+                      <NavDropdown.Item href="/add_product">Create Products</NavDropdown.Item>
+                    </NavDropdown>
+                    <NavDropdown
+                      title="Orders"
+                      id={`offcanvasNavbarDropdown-expand-${expand}`}
+                    >
+                      <NavDropdown.Item href="/get_orders">Show Orders</NavDropdown.Item>
+                    </NavDropdown>
+                    {getRole() === "admin" ? 
                     <NavDropdown
                     title={`Bienvenido ${getUser().full_name}`}
                     id={`offcanvasNavbarDropdown-expand-${expand}`}
                   >
-                    <NavDropdown.Item href="/orders">Ordenes</NavDropdown.Item>
                     <NavDropdown.Item onClick={logoutUser}>Logout</NavDropdown.Item>
                   </NavDropdown>
                   :
@@ -69,14 +71,6 @@ const Header = () => {
                     </NavDropdown>
                   }
                 </Nav>
-                {getRole() === "user" &&
-                <Button variant="light" onClick={toogleMenu}>
-                  <box-icon name='cart' color='#000000' ></box-icon>
-                  <Badge pill  bg="danger">
-                    <span className="item__total"> {cart.length} </span>
-                  </Badge>
-                </Button>
-              }
               </Offcanvas.Body>
             </Navbar.Offcanvas>
           </Container>
@@ -86,4 +80,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default HeaderAdmin;

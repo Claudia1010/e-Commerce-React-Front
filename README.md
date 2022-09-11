@@ -1,70 +1,66 @@
-# Getting Started with Create React App
+<img src="https://github.com/Claudia1010/Laravel-Project-LFG/blob/main/public/img/geekhubs.png">
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Final Project: Artech E-Commerce
 
-## Available Scripts
+This is the 7th and final  👏  GeeksHubs project. The aim of this personal project is to develop an Art Replicas E-Commerce with the backend built with Laravel and the frontend using React. The website allows to the client to sign in, add to the cart multiple products, increase, remove them and pay for them in a simulated payment platform. The backoffice dashboard will let the admin to add new products to the site, edit and delete them, and also see all the orders submitted by the clients and change the delivery status of them.
+I used [Trello](https://trello.com/b/ajYXN54D/proyecto-final) board. ⛏️
 
-In the project directory, you can run:
+## User Guide
 
-### `npm start`
+### Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+#### Follow the steps mentioned below to install and run the project.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. Clone or download the repository
+```bash
+git clone https://github.com/Claudia1010/e-Commerce-React-Front.git
+```
+2. Go to the project directory and type npm install
+```bash
+npm install
+```
+3. Run npm start
+```bash
+npm start
+```
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Endpoints
 
-### `npm run build`
+The root for all the endpoints will be:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+LOCAL: http://localhost:3000/
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+HEROKU: [https://git.heroku.com/ch-react-front-e-commerce.git]
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## User View:
 
-### `npm run eject`
+<br/>
+<img src="https://github.com/Claudia1010/e-Commerce-React-Front/blob/main/public/img/screenshot_web.jpg">
+<br/>
+<img src="https://github.com/Claudia1010/e-Commerce-React-Front/blob/main/public/img/screenshot_web2.jpg">
+<br/>
+<img src="https://github.com/Claudia1010/e-Commerce-React-Front/blob/main/public/img/screenshot_web3.jpg">
+<br/>
+<img src="https://github.com/Claudia1010/e-Commerce-React-Front/blob/main/public/img/screenshot_web4.jpg">
+<br/>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## User View:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<br/>
+<img src="https://github.com/Claudia1010/e-Commerce-React-Front/blob/main/public/img/screenshot_web5.jpg">
+<br/>
+<img src="https://github.com/Claudia1010/e-Commerce-React-Front/blob/main/public/img/screenshot_web6.jpg">
+<br/>
+<img src="https://github.com/Claudia1010/e-Commerce-React-Front/blob/main/public/img/screenshot_web7.jpg">
+<br/>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Technologies
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<code><img width="10%" src="https://www.vectorlogo.zone/logos/heroku/heroku-ar21.svg"></code>
+<code><img width="10%" src="https://www.vectorlogo.zone/logos/getbootstrap/getbootstrap-ar21.svg"></code>
+<code><img width="10%" src="https://www.vectorlogo.zone/logos/reactjs/reactjs-ar21.svg"></code>
+<code><img width="10%" src="https://www.vectorlogo.zone/logos/sass-lang/sass-lang-ar21.svg"></code>
+<code><img width="10%" src="https://cdn.auth0.com/blog/jwtc/jwt_05.jpg"></code>
+<code><img width="10%" src="https://github.com/Claudia1010/teamProjectReact/blob/master/public/img/axios.png"></code>
+<code><img width="10%" src="https://github.com/Claudia1010/teamProjectReact/blob/master/public/img/doenv.png"></code>
