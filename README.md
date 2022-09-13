@@ -29,9 +29,9 @@ npm start
 
 The root for all the endpoints will be:
 
-LOCAL: http://localhost:3000/
+LOCAL: http://localhost:3000/api
 
-HEROKU: [https://git.heroku.com/ch-react-front-e-commerce.git]
+HEROKU: [https://ch-laravel-react-e-commerce.herokuapp.com/api]
 
 ## User View:
 
