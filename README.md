@@ -24,6 +24,11 @@ npm install
 npm start
 ```
 
+## Login Admin
+
+-   email = claudia@gmail.com
+-   password = 1234
+
 
 ## Endpoints
 
