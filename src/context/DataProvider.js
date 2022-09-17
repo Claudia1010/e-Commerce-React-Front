@@ -4,11 +4,12 @@ import axios from 'axios';
 
 const endpoint = 'https://ch-laravel-react-e-commerce.herokuapp.com/api'
 
+//definimos las funciones que van a gestionar el carrito de compras
 export const DataContext = createContext();
 
 export const DataProvider = (props) => {
 	const [products, setProducts] = useState([]);
-	const [menu, setMenu] = useState(false)
+	const [menu, setMenu] = useState(false)//item que muestra cantidad agregada
 	const [cart, setCart] =useState([])
 	const [total, setTotal] = useState(0)
 
@@ -30,32 +31,23 @@ export const DataProvider = (props) => {
         const addOrder = async () => {
             const user = getUser();
 
-            const arrays = cart.map((item) => {
+            const cartItems = cart.map((item) => {
                   return {
-                    product_ids: item.id,
-                    quantities: item.quantity,
-                    prices: item.price * item.quantity,
+                    product_id: item.id,
+                    quantity: item.quantity,
+                    price: item.price * item.quantity,
                   };
               });
               
-            const product_ids = arrays.map((item) => {
-                return item.product_ids
-            })
-            const quantities = arrays.map((item) => {
-                return item.quantities
-            })
-            const prices = arrays.map((item) => {
-                return item.prices
-            })
+            const ammount = cartItems.reduce((prev, next) => prev + next["price"], 0);
 
-            const ammount = prices.reduce((prev, next) => prev + next, 0);
+
             console.log("todo", {'user_id': user.id,
             'payment_method_id': 1,
             'carrier_id': 1,
             'ammount': ammount,
-            'prices': prices,
-            'quantities': quantities,
-            'product_ids': product_ids})
+            'products': cartItems
+           })
             
             //hace la llamada con los header de http y pasamos por body los campos requeridos
             http.post(`${endpoint}/addOrder`,
@@ -64,9 +56,7 @@ export const DataProvider = (props) => {
                 'payment_method_id': 1,
                 'carrier_id': 1,
                 'ammount': ammount,
-                'prices': prices,
-                'quantities': quantities,
-                'product_ids': product_ids
+                'products': cartItems
              }
              ).then((res)=>{
                 console.log(res);

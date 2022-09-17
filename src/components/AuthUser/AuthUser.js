@@ -2,6 +2,7 @@ import axios from 'axios';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+//definimos todas las funciones para gestionar usuarios
 export default function AuthUser(){
     const navigate = useNavigate();
 
@@ -52,8 +53,9 @@ export default function AuthUser(){
         navigate('/');
     }
 
+    //para hacer las llamadas axios que requieren token
     const http = axios.create({
-        baseURL:"https://git.heroku.com/ch-laravel-react-e-commerce.git/api",
+        baseURL:"https://ch-laravel-react-e-commerce.herokuapp.com/api",
         headers:{
             "Content-type" : "application/json",
             "Authorization" : `Bearer ${token}`

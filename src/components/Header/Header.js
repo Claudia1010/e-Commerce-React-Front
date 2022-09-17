@@ -1,12 +1,15 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { DataContext } from "../../context/DataProvider";
 import "boxicons";
 import AuthUser from "../AuthUser/AuthUser";
 import "./Header.scss";
 import { Badge, Button, Container, Nav, Navbar, NavDropdown, Offcanvas} from "react-bootstrap";
+import SearchBox from "../SearchBox/SearchBox";
+import { useLocation } from "react-router";
 
 const Header = () => {
   const value = useContext(DataContext);
+  const location = useLocation()
   const [cart] = value.cart;
   const [menu, setMenu] = value.menu;
 
@@ -23,8 +26,13 @@ const Header = () => {
     }
   };
 
+  useEffect(() => {
+    console.log(location.pathname)
+  }, [location])
+
   return (
     <>
+    
       {['md'].map((expand) => (
         <Navbar key={expand} bg="light" expand={expand} className="mb-3">
           <Container fluid>
@@ -36,6 +44,7 @@ const Header = () => {
               alt="Artech"
             />
           </Navbar.Brand>
+          {location.pathname === "/products" ? <SearchBox /> : null}
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}

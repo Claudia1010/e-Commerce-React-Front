@@ -1,8 +1,8 @@
 import React, { useState, useContext } from "react";
-import { ButtonGroup, Card, Modal } from "react-bootstrap";
+import { Card, ListGroup, Modal } from "react-bootstrap";
 import { DataContext } from "../../context/DataProvider";
 
-const ProductCard = (props) => {
+const ProductSearch = (props) => {
   const { id, name, artist, year, price, description, image } = props;
 
   const value = useContext(DataContext);
@@ -15,26 +15,9 @@ const ProductCard = (props) => {
 
   return (
     <>
-      <Card style={{ width: "16rem" }}>
-        <Card.Img variant="top" src={image} alt={name} height="200" />
-        <Card.Body>
-          <Card.Title>{name}</Card.Title>
-          <Card.Subtitle className="mb-2 text-muted"> {artist}</Card.Subtitle>
-          <Card.Subtitle className="mb-2 text-muted">{year}</Card.Subtitle>
-          <Card.Subtitle className="mb-2 text-muted">€ {price}</Card.Subtitle>
-          {/* <Card.Text>{description}</Card.Text> */}
-
-          <ButtonGroup aria-label="Actions">
-            <button className="btn btn-danger" onClick={() => addCart(id, 1)}>
-              Add to Cart
-            </button>
-            {/* <Link to={`/getProductById/${product.id}`} className='btn btn-danger'>BUY</Link> */}
-            <button onClick={handleShow} className="btn btn-warning" id={`modal-opening-${id}`}>
-              Details
-            </button>
-          </ButtonGroup>
-        </Card.Body>
-      </Card>
+      <ListGroup.Item key={id} onClick={handleShow}>
+          {name}  
+       </ListGroup.Item>
 
       <Modal className="modalPrincipalBody" show={show} onHide={handleClose}>
         <Modal.Header closeButton>
@@ -66,4 +49,4 @@ const ProductCard = (props) => {
   );
 };
 
-export default ProductCard;
+export default ProductSearch;

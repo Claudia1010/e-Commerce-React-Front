@@ -9,7 +9,7 @@ const Footer = () => {
         <p className="px-3"> Piedrabuena 36, 46017 València, Valencia, España</p>
         <div id="iconos">
             <box-icon type='logo' name='facebook-circle'></box-icon>
-            <box-icon name='twitter' type='logo' ></box-icon>
+            {/* <box-icon type='logo' name='twitter'></box-icon> */}
             <box-icon type='logo' name='instagram'></box-icon>
         </div>
     </footer>

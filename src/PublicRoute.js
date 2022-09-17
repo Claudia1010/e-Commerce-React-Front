@@ -8,7 +8,6 @@ import Login from './containers/User/Login/Login';
 import Order from './containers/Order/Order';
 import Footer from './components/Footer/Footer';
 
-
 function PublicRoute() {
    
     return (

@@ -12,7 +12,7 @@ export const Cart = () => {
   const tooglefalse = () => {
     setMenu(false);
   };
-
+//iconos agregar y quitar del carro
   const reduce = (id) => {
     cart.forEach((item) => {
       if (item.id === id) {
@@ -34,8 +34,7 @@ export const Cart = () => {
     if (window.confirm("¿Quieres quitar del carrito este producto?")) {
       cart.forEach((item, index) => {
         if (item.id === id) {
-          item.quantity = 1;
-          cart.splice(index, 1);
+          cart.splice(index, 1);//el método splice quita del array el elemento en la pos indicada en index
         }
       });
       setCart([...cart]);
