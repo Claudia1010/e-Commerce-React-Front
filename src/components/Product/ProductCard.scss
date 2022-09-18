@@ -1,0 +1,16 @@
+.card {
+    border: 0;
+  }
+
+.modal-content {
+    width: 100%;
+    pointer-events: auto;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 3.125rem;
+    outline: 0;
+  }
+  .card-title{
+    font-weight: bold;
+  }

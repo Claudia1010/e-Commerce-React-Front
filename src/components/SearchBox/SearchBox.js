@@ -31,14 +31,9 @@ const SearchBox = () => {
       return () => clearTimeout(timeoutId);
     }
   }, [data.slug]);
-
-    const openModal = (id) => {
-        
-    };
   
-
     return (
-        <Form className="d-flex">
+        <Form className="d-flex col col-md-4">
         <Form.Control
           type="search"
           placeholder="Buscador"

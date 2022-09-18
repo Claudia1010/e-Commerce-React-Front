@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import { ButtonGroup, Card, Modal } from "react-bootstrap";
 import { DataContext } from "../../context/DataProvider";
+import './ProductCard.scss'
 
 const ProductCard = (props) => {
   const { id, name, artist, year, price, description, image } = props;

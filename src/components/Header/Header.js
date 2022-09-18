@@ -34,9 +34,9 @@ const Header = () => {
     <>
     
       {['md'].map((expand) => (
-        <Navbar key={expand} bg="light" expand={expand} className="mb-3">
-          <Container fluid>
-          <Navbar.Brand href="/">
+        <Navbar key={expand} expand={expand} className="header mb-3">
+          <Container fluid className="row justify-content-md-center">
+          <Navbar.Brand className="col col-md-3" href="/">
             <img
               src="/img/Logo.png"
               height="100"

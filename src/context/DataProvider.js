@@ -9,14 +9,12 @@ export const DataContext = createContext();
 
 export const DataProvider = (props) => {
 	const [products, setProducts] = useState([]);
-	const [menu, setMenu] = useState(false)//item que muestra cantidad agregada
-	const [cart, setCart] =useState([])
-	const [total, setTotal] = useState(0)
+	const [menu, setMenu] = useState(false)//accion que muestra el modal del carrito cuando es true
+	const [cart, setCart] =useState([]) 
+	const [total, setTotal] = useState(0) //total a pagar
 
     //guardamos los headers de la llamada en http, y guarda user en getUser
     const {http, getUser} = AuthUser();
-
-	console.log(cart)
         
         useEffect( () => {
           getAllProducts()
@@ -40,7 +38,6 @@ export const DataProvider = (props) => {
               });
               
             const ammount = cartItems.reduce((prev, next) => prev + next["price"], 0);
-
 
             console.log("todo", {'user_id': user.id,
             'payment_method_id': 1,

@@ -15,7 +15,7 @@ const ProductSearch = (props) => {
 
   return (
     <>
-      <ListGroup.Item key={id} onClick={handleShow}>
+      <ListGroup.Item action variant="light" key={id} onClick={handleShow}>
           {name}  
        </ListGroup.Item>
 
