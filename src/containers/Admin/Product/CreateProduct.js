@@ -13,7 +13,7 @@ const CreateProduct = () => {
   const [description, setDescription] = useState("");
   const [image, setImage] = useState("");
   const [stock, setStock] = useState(0);
-  const [categoryId, setCategoryId] = useState("");
+  const [categoryId, setCategoryId] = useState(1);
   const navigate = useNavigate();
   const {http} = AuthUser();
 
@@ -31,7 +31,7 @@ const CreateProduct = () => {
 
   const store = async (e) => {
     e.preventDefault();
-    await http.post(`${endpoint}/addProduct/`, {
+    await http.post(`${endpoint}/addProduct`, {
       name: name,
       artist: artist,
       year: year,

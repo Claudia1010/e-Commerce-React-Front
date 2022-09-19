@@ -74,8 +74,11 @@ export const DataProvider = (props) => {
 		if(check){
             //recorremos el arreglo products, filtramos el producto que coincida con el id pasado y lo devolvemos product, si es true 
 			const data = products.filter(product =>{
-                //añadimos el atributo quantity al objeto producto que tenemos en el carrito para poder compararlo luego con stock por ej
-                product.quantity = quantity;
+                //se añade quantity a un solo producto que es el añadido, por defecto = 1
+                if(product.id === id) {
+                    //añadimos el atributo quantity al objeto producto que tenemos en el carrito para poder compararlo luego con stock por ej
+                    product.quantity = quantity;
+                }
 				return product.id === id
 			})
 			setCart([...cart, ...data])
