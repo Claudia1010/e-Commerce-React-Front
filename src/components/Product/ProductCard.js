@@ -5,14 +5,14 @@ import './ProductCard.scss'
 
 const ProductCard = (props) => {
   const { id, name, artist, year, price, description, image } = props;
-
   const value = useContext(DataContext);
   const addCart = value.addCart;
   const [show, setShow] = useState(false);
-
   const handleClose = () => setShow(false);
 
   const handleShow = () => setShow(true);
+
+
 
   return (
     <>

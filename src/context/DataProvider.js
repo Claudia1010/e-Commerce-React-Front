@@ -1,6 +1,7 @@
 import AuthUser from "../components/AuthUser/AuthUser";
 import React, { createContext, useState, useEffect } from "react";
 import axios from 'axios';
+import { useNavigate } from "react-router";
 
 const endpoint = 'https://ch-laravel-react-e-commerce.herokuapp.com/api'
 
@@ -12,9 +13,10 @@ export const DataProvider = (props) => {
 	const [menu, setMenu] = useState(false)//accion que muestra el modal del carrito cuando es true
 	const [cart, setCart] =useState([]) 
 	const [total, setTotal] = useState(0) //total a pagar
+    const navigate = useNavigate();
 
     //guardamos los headers de la llamada en http, y guarda user en getUser
-    const {http, getUser} = AuthUser();
+    const {http, getUser, getRole} = AuthUser();
         
         useEffect( () => {
           getAllProducts()
@@ -25,7 +27,6 @@ export const DataProvider = (props) => {
             setProducts(response.data.data)
         }
 
-        
         const addOrder = async () => {
             const user = getUser();
 
@@ -65,6 +66,16 @@ export const DataProvider = (props) => {
             })
         }
 
+        const addToCartLogged = (id, quantity) => {
+            console.log(getRole());
+            if(getRole() === "user"){
+              addCart(id, quantity);
+            }
+            else{
+              alert("Tienes que estar logueado para comprar");
+              navigate('/login');
+            }
+          }
  
 	const addCart = (id, quantity) =>{
         //pasa por cada elemnto del carrito y si esta el id que le pasamos devuelve un booleano (every)
@@ -116,7 +127,7 @@ export const DataProvider = (props) => {
 		products : [products],
 		menu: [menu, setMenu],
 		cart: [cart, setCart],
-		addCart: addCart,
+		addCart: addToCartLogged,
 		addOrder: addOrder,
 		total: [total, setTotal]
 	}

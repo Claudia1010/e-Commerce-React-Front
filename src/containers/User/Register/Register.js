@@ -39,7 +39,7 @@ export default function Register() {
 
                     <div className="form-group mt-3">
                         <label>Password:</label>
-                        <input type="password" className="form-control" placeholder="Enter password"
+                        <input type="password" className="form-control" placeholder="Enter 6 characters or more"
                             onChange={e => setPassword(e.target.value)}
                         id="pwd" />
                     </div>
