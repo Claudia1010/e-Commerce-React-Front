@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { useNavigate } from 'react-router-dom';
 import AuthUser from "../../../components/AuthUser/AuthUser";
+import toast from 'react-hot-toast';
 
 export default function Register() {
     const navigate = useNavigate();
@@ -15,12 +16,13 @@ export default function Register() {
     const submitForm = () =>{
         // api call
         http.post('/register',{email:email,password:password,full_name:name, address:address, city:city, phone:phone}).then((res)=>{
+            toast.success("Usuario creado exitosamente");
             navigate('/login')
         })
     }
 
     return(
-        <div className="row justify-content-left pt-5">
+        <div className="row justify-content-center pt-5">
             <div className="col-sm-6">
                 <div className="card p-4">
                     <h1 className="text-center mb-3">Register </h1>

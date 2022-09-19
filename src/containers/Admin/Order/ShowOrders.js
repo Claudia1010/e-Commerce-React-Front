@@ -1,7 +1,7 @@
-
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import AuthUser from '../../../components/AuthUser/AuthUser';
+import toast from 'react-hot-toast';
 
 const endpoint = 'https://ch-laravel-react-e-commerce.herokuapp.com/api'
 const ShowOrders = () => {
@@ -23,10 +23,10 @@ const ShowOrders = () => {
         .then((res)=>{
         console.log(res);
         if (res.data.success) {
-            alert("Pedido modificado correctamente")   
+            toast.success("Pedido modificado correctamente")   
             getAllOrders();
         } else {
-            alert("Ha habido un error modificando el pedido")
+            toast.error("Ha habido un error modificando el pedido")
         }
     })
     };

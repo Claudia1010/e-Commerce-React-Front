@@ -5,6 +5,7 @@ import { DataProvider } from './context/DataProvider';
 import AuthUser from './components/AuthUser/AuthUser';
 import PrivateRoute from './PrivateRoute';
 
+
 function App() {
   const {getToken, getRole} = AuthUser();
   if(getToken() && getRole()==='admin'){

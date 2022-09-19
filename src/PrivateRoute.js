@@ -5,6 +5,7 @@ import ShowProducts from './containers/Admin/Product/ShowProducts';
 import CreateProduct from './containers/Admin/Product/CreateProduct';
 import EditProduct from './containers/Admin/Product/EditProduct';
 import ShowOrders from './containers/Admin/Order/ShowOrders';
+import { Toaster } from 'react-hot-toast';
 
 function PrivateRoute() {
    
@@ -12,6 +13,7 @@ function PrivateRoute() {
         <>
             <div className="App">
                 <HeaderAdmin/>
+                <Toaster />
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/products" element={<ShowProducts />} />

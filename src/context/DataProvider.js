@@ -2,6 +2,7 @@ import AuthUser from "../components/AuthUser/AuthUser";
 import React, { createContext, useState, useEffect } from "react";
 import axios from 'axios';
 import { useNavigate } from "react-router";
+import toast from 'react-hot-toast';
 
 const endpoint = 'https://ch-laravel-react-e-commerce.herokuapp.com/api'
 
@@ -59,9 +60,9 @@ export const DataProvider = (props) => {
              ).then((res)=>{
                 console.log(res);
                 if (res.data.success) {
-                    alert("Pedido realizado correctamente")
+                    toast.success("Pedido realizado correctamente")
                 } else {
-                    alert("Ha habido un error preparando el pedido")
+                    toast.error("Ha habido un error preparando el pedido")
                 }
             })
         }
@@ -72,7 +73,7 @@ export const DataProvider = (props) => {
               addCart(id, quantity);
             }
             else{
-              alert("Tienes que estar logueado para comprar");
+              toast.error("Tienes que estar logueado para comprar");
               navigate('/login');
             }
           }
@@ -93,9 +94,9 @@ export const DataProvider = (props) => {
 				return product.id === id
 			})
 			setCart([...cart, ...data])
-            alert("Producto añadido exitosamente")
+            toast.success("Producto añadido exitosamente")
 		}else{
-			alert("Este producto ya estaba en el carrito")
+			toast.error("Este producto ya estaba en el carrito")
 		}
 	}
     //recupera el carrito guardado en localStorage

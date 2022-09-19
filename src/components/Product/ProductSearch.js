@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import { Card, ListGroup, Modal } from "react-bootstrap";
 import { DataContext } from "../../context/DataProvider";
+import './ProductSearch.scss'
 
 const ProductSearch = (props) => {
   const { id, name, artist, year, price, description, image } = props;
@@ -15,7 +16,7 @@ const ProductSearch = (props) => {
 
   return (
     <>
-      <ListGroup.Item action variant="light" key={id} onClick={handleShow}>
+      <ListGroup.Item className="list-search" variant="light" key={id} onClick={handleShow}>
           {name}  
        </ListGroup.Item>
 

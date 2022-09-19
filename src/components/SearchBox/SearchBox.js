@@ -44,7 +44,7 @@ const SearchBox = () => {
 
         />
         {data.results.length > 0 ?  
-            <ListGroup className='buscador'>
+            <ListGroup className='searchbox'>
                     {data.results.map((item, pos) => (
                         <ProductSearch {...item} />
                         // <ListGroup.Item key={pos} action onClick={openModal(item.id)}>

@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import AuthUser from "../../../components/AuthUser/AuthUser";
+import toast from 'react-hot-toast';
 
 const endpoint = "https://ch-laravel-react-e-commerce.herokuapp.com/api";
 
@@ -33,10 +34,10 @@ const EditProduct = () => {
     }).then((res)=>{
       console.log(res);
       if (res.data.success) {
-          alert("Producto editado correctamente")   
+          toast.success("Producto editado correctamente")   
           navigate("/products");
       } else {
-          alert("Ha habido un error editando el producto")
+          toast.error("Ha habido un error editando el producto")
       }
   })
   };

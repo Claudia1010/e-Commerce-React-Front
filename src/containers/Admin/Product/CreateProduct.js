@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import AuthUser from "../../../components/AuthUser/AuthUser";
+import toast from 'react-hot-toast';
 
 const endpoint = "https://ch-laravel-react-e-commerce.herokuapp.com/api";
 
@@ -43,10 +44,10 @@ const CreateProduct = () => {
     }).then((res)=>{
       console.log(res);
       if (res.data.success) {
-          alert("Producto creado correctamente")   
+          toast.success("Producto creado correctamente")   
           navigate("/products");
       } else {
-          alert("Ha habido un error creando el producto")
+          toast.error("Ha habido un error creando el producto")
       }
   })
   };
